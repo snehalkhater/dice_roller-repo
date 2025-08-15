@@ -3,29 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiceRoller</title>
+    <title>Dice Roller</title>
     <style>
-        body{
-            margin: 0;
-            padding: 0;
+        body {
+            background-color: aquamarine;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
         }
-        img{
-            display: none;
-            height: 200px;
+        img {
             width: 200px;
+            height: 200px;
+            display: none;
+        }
+        button {
+            background-color: brown;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <h2>Dice Roller</h2>
-    <img id="dice1" src="./images/dice (1).png" alt="Dice1">
-    <img id="dice2" src="./images/dice (2).png" alt="Dice2">
-    <img id="dice3" src="./images/dice (3).png" alt="Dice3">
-    <img id="dice4" src="./images/dice (4).png" alt="Dice4">
-    <img id="dice5" src="./images/dice (5).png" alt="Dice5">
-    <img id="dice6" src="./images/dice (6).png" alt="Dice6">
-    <script>
+    <h1>Dice Roller</h1>
+    <img id="dice1" src="./images/dice (1).png" alt="Dice 1">
+    <img id="dice2" src="./images/dice (2).png" alt="Dice 2">
+    <img id="dice3" src="./images/dice (3).png" alt="Dice 3">
+    <img id="dice4" src="./images/dice (4).png" alt="Dice 4">
+    <img id="dice5" src="./images/dice (5).png" alt="Dice 5">
+    <img id="dice6" src="./images/dice (6).png" alt="Dice 6">
 
+    <br>
+    <button onclick="roll()">Roll The Dice</button>
+    <script>
+        const min = 1;
+        const max = 6;
+
+        function roll() {
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            for (let i = 1; i <= 6; i++) {
+                document.getElementById(`dice${i}`).style.display = "none";
+            }
+            document.getElementById(`dice${randomNumber}`).style.display = "inline";
+        }
+        document.getElementById("dice1").style.display = "inline";
     </script>
 </body>
 </html>
