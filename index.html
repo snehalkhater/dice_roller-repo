@@ -7,13 +7,25 @@
     <style>
         body {
             background-color: aquamarine;
-            text-align: center;
             font-family: Arial, sans-serif;
             padding-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 20px;
         }
         img {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             display: none;
         }
         button {
@@ -24,20 +36,27 @@
             cursor: pointer;
             margin-top: 20px;
             border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
-    <h1>Dice Roller</h1>
-    <img id="dice1" src="./images/dice (1).png" alt="Dice 1">
-    <img id="dice2" src="./images/dice (2).png" alt="Dice 2">
-    <img id="dice3" src="./images/dice (3).png" alt="Dice 3">
-    <img id="dice4" src="./images/dice (4).png" alt="Dice 4">
-    <img id="dice5" src="./images/dice (5).png" alt="Dice 5">
-    <img id="dice6" src="./images/dice (6).png" alt="Dice 6">
+    <div class="container">
+        <h1> Dice Roller </h1>
+        <img id="dice1" src="./images/dice (1).png" alt="Dice 1">
+        <img id="dice2" src="./images/dice (2).png" alt="Dice 2">
+        <img id="dice3" src="./images/dice (3).png" alt="Dice 3">
+        <img id="dice4" src="./images/dice (4).png" alt="Dice 4">
+        <img id="dice5" src="./images/dice (5).png" alt="Dice 5">
+        <img id="dice6" src="./images/dice (6).png" alt="Dice 6">
 
-    <br>
-    <button onclick="roll()">Roll The Dice</button>
+        <br>
+        <button onclick="roll()">Roll The Dice</button>
+    </div>
+
     <script>
         const min = 1;
         const max = 6;
