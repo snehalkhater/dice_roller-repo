@@ -7,7 +7,7 @@
     <title>Dice Roller</title>
     <style>
         body {
-            background-color: aquamarine;
+            background-color: #ffcccc; /* light red background */
             font-family: Arial, sans-serif;
             padding-top: 50px;
             display: flex;
@@ -15,16 +15,18 @@
         }
 
         .container {
-            background-color: white;
+            background-color: #fff0f0; /* very light red */
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3); /* red shadow */
             text-align: center;
             width: 300px;
+            border: 2px solid #ff4d4d; /* red border */
         }
 
         h1 {
             margin-bottom: 20px;
+            color: #cc0000; /* dark red heading */
         }
 
         img {
@@ -34,7 +36,7 @@
         }
 
         button {
-            background-color: brown;
+            background-color: #cc0000; /* dark red */
             color: white;
             padding: 10px 20px;
             font-size: 16px;
@@ -42,17 +44,21 @@
             margin-top: 20px;
             border: none;
             border-radius: 5px;
+            transition: 0.3s;
         }
 
         button:hover {
-            background-color: darkred;
+            background-color: #990000; /* deeper red on hover */
+            transform: scale(1.05);
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1> Dice Roller </h1>
+        <h1>Dice Roller</h1>
+
+        <!-- All dice faces -->
         <img id="dice1" src="./images/dice (1).png" alt="Dice 1">
         <img id="dice2" src="./images/dice (2).png" alt="Dice 2">
         <img id="dice3" src="./images/dice (3).png" alt="Dice 3">
@@ -65,16 +71,19 @@
     </div>
 
     <script>
-        const min = 1;
-        const max = 6;
-
         function roll() {
-            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+            // Hide all dice faces
             for (let i = 1; i <= 6; i++) {
                 document.getElementById(`dice${i}`).style.display = "none";
             }
+
+            // Show random dice
             document.getElementById(`dice${randomNumber}`).style.display = "inline";
         }
+
+        // Show dice face 1 at start
         document.getElementById("dice1").style.display = "inline";
     </script>
 </body>
